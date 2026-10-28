@@ -16,6 +16,11 @@ public class Exercises {
         int sum = 0;
         ListNode current = head;
 
+        if(head == null)
+        {
+            return 0;
+        }
+
         while(current != null)
         {
             sum += current.data;
@@ -40,6 +45,11 @@ public class Exercises {
     {
         int count = 0;
         ListNode current = head;
+
+        if(head == null)
+        {
+            return 0;
+        }
 
         while(current != null)
         {
@@ -94,8 +104,23 @@ public class Exercises {
      * 
      * @param head the head of the list
      */
-    public static void makePositive(ListNode head) {
+    public static void makePositive(ListNode head) 
+    {
+        ListNode current = head;
 
+        if(head == null)
+        {
+            return;
+        }
+
+        while(current != null)
+        {
+            if(current.data < 0)
+            {
+                current.data = current.data * -1;
+            }
+            current = current.next;
+        }
     }
 
     /**
