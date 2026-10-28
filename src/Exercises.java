@@ -23,6 +23,7 @@ public class Exercises {
         }
         return sum;
     }
+
     /**
      * Returns how many negative values there are in the linked list.
      * 
@@ -35,8 +36,21 @@ public class Exercises {
      * @param head the head of the linked list
      * @return a count of the negative values in the list
      */
-    public static int countNegative(ListNode head) {
-        return -1;
+    public static int countNegative(ListNode head) 
+    {
+        int count = 0;
+        ListNode current = head;
+
+        while(current != null)
+        {
+            if(current.data < 0)
+            {
+                count++;
+            }
+            current = current.next;
+
+        }
+        return count;
     }
 
     /**
