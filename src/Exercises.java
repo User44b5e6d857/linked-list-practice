@@ -139,7 +139,28 @@ public class Exercises {
      * @param head the head of the list
      * @return whether the list is increasing
      */
-    public static boolean isIncreasing(ListNode head) {
-        return false;
+    public static boolean isIncreasing(ListNode head) 
+    {
+        ListNode current = head;
+        if(head == null) 
+        {
+            return true;
+        }
+
+        if(current.next == null)
+        {
+            return true;
+        }
+
+        while(current != null && current.next != null)
+        {
+            if(current.data > current.next.data)
+            {
+                return false;
+            }
+            current = current.next;
+        }
+
+        return true;
     }
 }
